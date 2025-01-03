@@ -19,23 +19,26 @@
       top: 53%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: calc(100% - 20px); /* Gesamtbreite minus 20px (10px links und rechts) */
+      width: 90%;
       height: 90%;
       z-index: 1;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       background-color: #ffffff; /* Hintergrundfarbe */
+      padding: 0 10px; /* Platz innen: 10px links und rechts */
+      box-sizing: border-box; /* Padding wird in die Breite mit einbezogen */
     }
-
+    
     .background-slideshow img {
       position: absolute;
       width: 100%;
-      height: 95%;
-      object-fit: contain;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      height: 95%; /* Maximale Höhe des Bildes */
+      object-fit: contain; /* Bild wird skaliert, ohne das Seitenverhältnis zu verändern */
+      opacity: 0; /* Unsichtbar zu Beginn */
+      transition: opacity 1s ease-in-out; /* Sanfter Übergang bei Änderungen */
     }
+
 
     .background-slideshow img.active {
       opacity: 1;
